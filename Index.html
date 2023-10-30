@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Marker and Shapes</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP5dthxzmxZiCHEJBRiVlsNAGLtr2InMM&callback=initMap&v=weekly" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+ </head>
+<body>
+  <div class="form-container">
+    <h2>Place a Marker</h2>
+    <input type="text" id="markerName" placeholder="Marker Name">
+    <input type="text" id="markerLatitude" placeholder="Latitude">
+    <input type="text" id="markerLongitude" placeholder="Longitude">
+    <button type="button" onclick="placeMarker()">Place Marker</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Get Directions</h2>
+    <input type="text" id="origin" placeholder="Origin">
+    <input type="text" id="destination" placeholder="Destination">
+    <button type="button" onclick="getDirections()">Get Directions</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Place a Circle</h2>
+    <input type="text" id="circleLatitude" placeholder="Latitude">
+    <input type="text" id="circleLongitude" placeholder="Longitude">
+    <input type="number" id="circleRadius" placeholder="Circle Radius (meters)">
+    <button type="button" onclick="placeCircle()">Place Circle</button>
+  </div>
+
+  <div class "form-container">
+    <h2>Place a Rectangle</h2>
+    <input type="text" id="rectangleLatitude" placeholder="Latitude">
+    <input type="text" id="rectangleLongitude" placeholder="Longitude">
+    <input type="number" id="rectangleWidth" placeholder="Rectangle Width (meters)">
+    <input type="number" id="rectangleHeight" placeholder="Rectangle Height (meters)">
+    <button type="button" onclick="placeRectangle()">Place Rectangle</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Place a Polygon</h2>
+    <input type="text" id="polygonCoordinates" placeholder="Polygon Coordinates (lat,lng lat,lng ...)">
+    <button type="button" onclick="placePolygon()">Place Polygon</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Place Polylines</h2>
+    <input type="text" id="polylineCoordinates" placeholder="Polyline Coordinates (lat,lng lat,lng lat,lng lat,lng)">
+    <button type="button" onclick="placePolyline()">Place Polyline</button>
+  </div>
+
+  <div id="map" style="width: 800px; height: 600px;"></div>
+</body>
+</html>
